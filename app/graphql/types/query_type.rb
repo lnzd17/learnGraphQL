@@ -14,4 +14,6 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :allVotes, !types[Types::VoteType] do
     resolve -> (obj, args, ctx) { Vote.all }
   end
+
+  field :allLinks, function: Resolvers::LinksSearch
 end
